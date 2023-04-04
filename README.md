@@ -23,24 +23,24 @@
 | ------------------------------ | ---------- | ------------------------------ |
 | items_name                     | string     | null: false                    | 
 | description                    | text       | null: false                    | 
-| category                       | integer    | null: false                    | 
-| condition                      | integer    | null: false                    | 
-| shipping_burden                | integer    | null: false                    | 
-| shipping_from                  | integer    | null: false                    | 
-| shipping_days                  | integer    | null: false                    | 
+| category_id                    | integer    | null: false                    | 
+| condition_id                   | integer    | null: false                    | 
+| shipping_burden_id             | integer    | null: false                    | 
+| shipping_from_id               | integer    | null: false                    | 
+| shipping_days_id               | integer    | null: false                    | 
 | price                          | integer    | null: false                    | 
 | user                           | references | null: false, foreign_key: true | 
 
 ### Association
 * belongs_to :user
-* has_one :purchases
+* has_one :purchase
 
 ## shipping_destinations_table
 
 | column                         | type       | options                        | 
 | ------------------------------ | ---------- | ------------------------------ |
 | postal_code                    | string     | null: false                    | 
-| prefecture                     | integer    | null: false                    | 
+| shipping_from                  | integer    | null: false                    | 
 | city                           | string     | null: false                    | 
 | address1                       | string     | null: false                    | 
 | address2                       | string     |                                | 
@@ -48,7 +48,7 @@
 | purchase                       | references | null: false, foreign_key: true | 
 
 ### Association
-* belongs_to :purchases
+* belongs_to :purchase
 
 ## purchases_table
 
@@ -60,6 +60,6 @@
 ### Association
 * belongs_to :user
 * belongs_to :item
-* has_one :shipping_destinations
+* has_one :shipping_destination
 
 
