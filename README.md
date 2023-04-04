@@ -1,8 +1,9 @@
-| テーブル設計                   |            |                                | 
-| ------------------------------ | ---------- | ------------------------------ | 
-| users_table                    |            |                                | 
-|                                |            |                                | 
+テーブル設計           
+
+## users_table  
+
 | column                         | type       | options                        | 
+| ------------------------------ | ---------- | ------------------------------ |
 | nickname                       | string     | null: false                    | 
 | email                          | string     | null: false, unique: true      | 
 | encrypted_password             | string     | null: false                    | 
@@ -12,12 +13,14 @@
 | first_name_kana                | string     | null: false                    | 
 | birthday                       | date       | null: false                    | 
 
-| Association                    |            |                                | 
-| has_many :items                |            |                                | 
-| has_many :purchases            |            |                                | 
+### Association
+* has_many :items 
+* has_many :purchases 
 
-| items_table                    |            |                                | 
+## items_table
+
 | column                         | type       | options                        | 
+| ------------------------------ | ---------- | ------------------------------ |
 | items_name                     | string     | null: false                    | 
 | description                    | text       | null: false                    | 
 | category                       | integer    | null: false                    | 
@@ -28,12 +31,14 @@
 | price                          | integer    | null: false                    | 
 | user                           | references | null: false, foreign_key: true | 
 
-| Association                    |            |                                | 
-| belongs_to :user               |            |                                | 
-| has_one :purchases             |            |                                | 
+### Association
+* belongs_to :user
+* has_one :purchases
 
-| shipping_destinations_table    |            |                                | 
+## shipping_destinations_table
+
 | column                         | type       | options                        | 
+| ------------------------------ | ---------- | ------------------------------ |
 | postal_code                    | string     | null: false                    | 
 | prefecture                     | integer    | null: false                    | 
 | city                           | string     | null: false                    | 
@@ -42,18 +47,19 @@
 | phone_number                   | string     | null: false                    | 
 | purchase                       | references | null: false, foreign_key: true | 
 
-| Association                    |            |                                | 
-| belongs_to :purchases          |            |                                | 
+### Association
+* belongs_to :purchases
 
-| purchases_table                |            |                                | 
-|                                |            |                                | 
+## purchases_table
+
 | column                         | type       | options                        | 
+| ------------------------------ | ---------- | ------------------------------ |
 | user                           | references | null: false, foreign_key: true | 
 | item                           | references | null: false, foreign_key: true | 
 
-| Association                    |            |                                | 
-| belongs_to :user               |            |                                | 
-| belongs_to :item               |            |                                | 
-| has_one :shipping_destinations |            |                                | 
+### Association
+* belongs_to :user
+* belongs_to :item
+* has_one :shipping_destinations
 
 
