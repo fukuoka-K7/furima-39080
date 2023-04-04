@@ -39,7 +39,7 @@
 
 | column                         | type       | options                        | 
 | ------------------------------ | ---------- | ------------------------------ |
-| postal_code_id                 | string     | null: false                    | 
+| postal_code                    | string     | null: false                    | 
 | shipping_from_id               | integer    | null: false                    | 
 | city                           | string     | null: false                    | 
 | address1                       | string     | null: false                    | 
