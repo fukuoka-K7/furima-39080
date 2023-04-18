@@ -12,11 +12,11 @@ class Item < ApplicationRecord
   validates :image,             presence: true
   validates :item_name,         presence: true
   validates :description,       presence: true
-  validates :category_id,       presence: true
-  validates :condition_id,      presence: true
-  validates :shipping_burden_id,presence: true
-  validates :shipping_from_id  ,presence: true
-  validates :shipping_day_id,   presence: true
+  validates :category_id,       
+  validates :condition_id,      
+  validates :shipping_burden_id,
+  validates :shipping_from_id  ,
+  validates :shipping_day_id,   
   validates :price,             presence: true, numericality: {only_integer: true}, inclusion: { in: 300..9999999 }
 
     with_options numericality: { other_than: 1 } do
