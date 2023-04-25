@@ -20,4 +20,5 @@ class ShippingFrom < ActiveHash::Base
   
   include ActiveHash::Associations
   has_many :items
+  has_many :shipping_destinations
 end
