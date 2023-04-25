@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
 
   def create
     @order_form = OrderForm.new(order_from_params)
-    @item.price = Item.find(params[:item_id]).price
     if @order_form.valid?
       pay_item
       @order_form.save
