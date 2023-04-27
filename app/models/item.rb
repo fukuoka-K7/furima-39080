@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :description,       presence: true
   validates :price,             presence: true, numericality: { only_integer: true }, inclusion: { in: 300..9_999_999 }
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality:  { other_than: 1 , message: "を選択してください"} do
     validates :category_id, :shipping_from_id, :condition_id, :shipping_burden_id, :shipping_day_id
   end
 end

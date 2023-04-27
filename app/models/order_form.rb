@@ -7,8 +7,8 @@ class OrderForm
     validates :user_id
     validates :item_id
 
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-    validates :shipping_from_id, numericality: { other_than: 1 }
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "が無効です。ハイフンを入れてください"}
+    validates :shipping_from_id, numericality: { other_than: 1 , message: "を選択してください" }
     validates :city
     validates :address1
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
